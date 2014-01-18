@@ -6,4 +6,10 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      .row
+        .jumbotron
+          %h2 Zip Area Demo
+          %p Please select some Zip Areas
+      .row
+        = yield
