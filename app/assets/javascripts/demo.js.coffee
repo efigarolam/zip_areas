@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+window.ZipAreasMap ||= {}
+
+$ ->
+  ZipAreasMap.selectedZipCodes = []
+  ZipAreasMap.initialize()
+
+  $('#change-color').click ->
+    color = RandomColor.generate()
+    ZipAreasMap.polygons.forEach (polygon) ->
+      polygon.setOptions
+        fillColor: color
+        strokeColor: color
