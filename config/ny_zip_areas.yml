@@ -1,0 +1,710 @@
+-
+  name: '10001'
+  boundaries:
+    -
+      longitude: '-73.987733'
+      latitude: '40.744149'
+    -
+      longitude: '-73.983973'
+      latitude: '40.748934'
+    -
+      longitude: '-74.006533'
+      latitude: '40.756112'
+    -
+      longitude: '-74.008242'
+      latitude: '40.752352'
+    -
+      longitude: '-73.992177'
+      latitude: '40.743465'
+-
+  name: '10002'
+  boundaries:
+    -
+      longitude: '-73.997519'
+      latitude: '40.714021'
+    -
+      longitude: '-73.996017'
+      latitude: '40.708849'
+    -
+      longitude: '-73.976104'
+      latitude: '40.712915'
+    -
+      longitude: '-73.97516'
+      latitude: '40.719681'
+    -
+      longitude: '-73.992583'
+      latitude: '40.724137'
+-
+  name: '10003'
+  boundaries:
+    -
+      longitude: '-73.99081'
+      latitude: '40.739705'
+    -
+      longitude: '-73.99662'
+      latitude: '40.729451'
+    -
+      longitude: '-73.992519'
+      latitude: '40.724323'
+    -
+      longitude: '-73.988759'
+      latitude: '40.722956'
+    -
+      longitude: '-73.979871'
+      latitude: '40.73492'
+-
+  name: '10004'
+  boundaries:
+    -
+      longitude: '-74.016104'
+      latitude: '40.706891'
+    -
+      longitude: '-74.017471'
+      latitude: '40.703814'
+    -
+      longitude: '-74.005508'
+      latitude: '40.704156'
+    -
+      longitude: '-74.00585'
+      latitude: '40.704156'
+    -
+      longitude: '-74.012344'
+      latitude: '40.706549'
+-
+  name: '10005'
+  boundaries:
+    -
+      longitude: '-74.00585'
+      latitude: '40.704156'
+    -
+      longitude: '-74.010293'
+      latitude: '40.708941'
+    -
+      longitude: '-74.012344'
+      latitude: '40.706549'
+-
+  name: '10006'
+  boundaries:
+    -
+      longitude: '-74.010293'
+      latitude: '40.708941'
+    -
+      longitude: '-74.009951'
+      latitude: '40.709625'
+    -
+      longitude: '-74.011319'
+      latitude: '40.710309'
+    -
+      longitude: '-74.016104'
+      latitude: '40.706891'
+    -
+      longitude: '-74.012344'
+      latitude: '40.706549'
+-
+  name: '10007'
+  boundaries:
+    -
+      longitude: '-74.013028'
+      latitude: '40.718171'
+    -
+      longitude: '-74.016446'
+      latitude: '40.713385'
+    -
+      longitude: '-74.011319'
+      latitude: '40.710309'
+    -
+      longitude: '-74.009951'
+      latitude: '40.709625'
+    -
+      longitude: '-73.998671'
+      latitude: '40.713385'
+-
+  name: '10009'
+  boundaries:
+    -
+      longitude: '-73.97406'
+      latitude: '40.732527'
+    -
+      longitude: '-73.979871'
+      latitude: '40.73492'
+    -
+      longitude: '-73.988759'
+      latitude: '40.722956'
+-
+  name: '10010'
+  boundaries:
+    -
+      longitude: '-73.979871'
+      latitude: '40.73492'
+    -
+      longitude: '-73.97406'
+      latitude: '40.732527'
+    -
+      longitude: '-73.974402'
+      latitude: '40.736287'
+    -
+      longitude: '-73.971668'
+      latitude: '40.743123'
+    -
+      longitude: '-73.987733'
+      latitude: '40.744149'
+    -
+      longitude: '-73.992177'
+      latitude: '40.743465'
+    -
+      longitude: '-73.99081'
+      latitude: '40.739705'
+-
+  name: '10011'
+  boundaries:
+    -
+      longitude: '-73.99662'
+      latitude: '40.729451'
+    -
+      longitude: '-73.99081'
+      latitude: '40.739705'
+    -
+      longitude: '-73.992177'
+      latitude: '40.743465'
+    -
+      longitude: '-74.008242'
+      latitude: '40.752352'
+    -
+      longitude: '-74.009268'
+      latitude: '40.742782'
+    -
+      longitude: '-74.001064'
+      latitude: '40.731843'
+-
+  name: '10012'
+  boundaries:
+    -
+      longitude: '-73.992519'
+      latitude: '40.724323'
+    -
+      longitude: '-73.99662'
+      latitude: '40.729451'
+    -
+      longitude: '-74.001064'
+      latitude: '40.731843'
+    -
+      longitude: '-74.003115'
+      latitude: '40.726716'
+    -
+      longitude: '-73.994228'
+      latitude: '40.719538'
+-
+  name: '10013'
+  boundaries:
+    -
+      longitude: '-73.994228'
+      latitude: '40.719538'
+    -
+      longitude: '-74.003115'
+      latitude: '40.726716'
+    -
+      longitude: '-74.015079'
+      latitude: '40.726716'
+    -
+      longitude: '-74.013028'
+      latitude: '40.718171'
+    -
+      longitude: '-73.998671'
+      latitude: '40.713385'
+    -
+      longitude: '-73.997304'
+      latitude: '40.714069'
+-
+  name: '10014'
+  boundaries:
+    -
+      longitude: '-74.015079'
+      latitude: '40.726716'
+    -
+      longitude: '-74.003115'
+      latitude: '40.726716'
+    -
+      longitude: '-74.001064'
+      latitude: '40.731843'
+    -
+      longitude: '-74.009268'
+      latitude: '40.742782'
+-
+  name: '10016'
+  boundaries:
+    -
+      longitude: '-73.968591'
+      latitude: '40.747225'
+    -
+      longitude: '-73.981922'
+      latitude: '40.752011'
+    -
+      longitude: '-73.983973'
+      latitude: '40.748934'
+    -
+      longitude: '-73.987733'
+      latitude: '40.744149'
+    -
+      longitude: '-73.971668'
+      latitude: '40.743123'
+-
+  name: '10017'
+  boundaries:
+    -
+      longitude: '-73.968591'
+      latitude: '40.747225'
+    -
+      longitude: '-73.963122'
+      latitude: '40.753378'
+    -
+      longitude: '-73.97782'
+      latitude: '40.757822'
+    -
+      longitude: '-73.978162'
+      latitude: '40.757138'
+    -
+      longitude: '-73.980897'
+      latitude: '40.753378'
+    -
+      longitude: '-73.981922'
+      latitude: '40.752011'
+-
+  name: '10018'
+  boundaries:
+    -
+      longitude: '-73.980897'
+      latitude: '40.753378'
+    -
+      longitude: '-74.001406'
+      latitude: '40.76124'
+    -
+      longitude: '-74.003115'
+      latitude: '40.760214'
+    -
+      longitude: '-74.006533'
+      latitude: '40.756112'
+    -
+      longitude: '-73.983973'
+      latitude: '40.748934'
+    -
+      longitude: '-73.981922'
+      latitude: '40.752011'
+-
+  name: '10019'
+  boundaries:
+    -
+      longitude: '-73.98158'
+      latitude: '40.768076'
+    -
+      longitude: '-73.993886'
+      latitude: '40.773203'
+    -
+      longitude: '-74.003115'
+      latitude: '40.760214'
+    -
+      longitude: '-74.001406'
+      latitude: '40.76124'
+    -
+      longitude: '-73.981239'
+      latitude: '40.758505'
+    -
+      longitude: '-73.976795'
+      latitude: '40.758847'
+    -
+      longitude: '-73.973035'
+      latitude: '40.764316'
+-
+  name: '10020'
+  boundaries:
+    -
+      longitude: '-73.97782'
+      latitude: '40.757822'
+    -
+      longitude: '-73.976795'
+      latitude: '40.758847'
+    -
+      longitude: '-73.981239'
+      latitude: '40.758505'
+    -
+      longitude: '-73.978162'
+      latitude: '40.757138'
+-
+  name: '10021'
+  boundaries:
+    -
+      longitude: '-73.94774'
+      latitude: '40.770127'
+    -
+      longitude: '-73.963122'
+      latitude: '40.777647'
+    -
+      longitude: '-73.972351'
+      latitude: '40.764658'
+    -
+      longitude: '-73.95902'
+      latitude: '40.758163'
+-
+  name: '10022'
+  boundaries:
+    -
+      longitude: '-73.97782'
+      latitude: '40.757822'
+    -
+      longitude: '-73.963122'
+      latitude: '40.753378'
+    -
+      longitude: '-73.95902'
+      latitude: '40.758163'
+    -
+      longitude: '-73.972351'
+      latitude: '40.764658'
+    -
+      longitude: '-73.973035'
+      latitude: '40.764316'
+    -
+      longitude: '-73.976795'
+      latitude: '40.758847'
+-
+  name: '10023'
+  boundaries:
+    -
+      longitude: '-73.973719'
+      latitude: '40.779356'
+    -
+      longitude: '-73.988075'
+      latitude: '40.781407'
+    -
+      longitude: '-73.993886'
+      latitude: '40.773203'
+    -
+      longitude: '-73.98158'
+      latitude: '40.768076'
+-
+  name: '10024'
+  boundaries:
+    -
+      longitude: '-73.966882'
+      latitude: '40.788585'
+    -
+      longitude: '-73.96654'
+      latitude: '40.808411'
+    -
+      longitude: '-73.962097'
+      latitude: '40.817982'
+    -
+      longitude: '-73.988075'
+      latitude: '40.781407'
+    -
+      longitude: '-73.973719'
+      latitude: '40.779356'
+-
+  name: '10025'
+  boundaries:
+    -
+      longitude: '-73.958337'
+      latitude: '40.800549'
+    -
+      longitude: '-73.959362'
+      latitude: '40.806018'
+    -
+      longitude: '-73.96654'
+      latitude: '40.808411'
+    -
+      longitude: '-73.966882'
+      latitude: '40.788585'
+-
+  name: '10026'
+  boundaries:
+    -
+      longitude: '-73.944664'
+      latitude: '40.803283'
+    -
+      longitude: '-73.959362'
+      latitude: '40.806018'
+    -
+      longitude: '-73.958337'
+      latitude: '40.800549'
+    -
+      longitude: '-73.949108'
+      latitude: '40.796789'
+    -
+      longitude: '-73.946373'
+      latitude: '40.800549'
+-
+  name: '10027'
+  boundaries:
+    -
+      longitude: '-73.959362'
+      latitude: '40.806018'
+    -
+      longitude: '-73.944664'
+      latitude: '40.803283'
+    -
+      longitude: '-73.939879'
+      latitude: '40.809436'
+    -
+      longitude: '-73.941929'
+      latitude: '40.812854'
+    -
+      longitude: '-73.948082'
+      latitude: '40.817298'
+    -
+      longitude: '-73.957995'
+      latitude: '40.823109'
+    -
+      longitude: '-73.962097'
+      latitude: '40.817982'
+    -
+      longitude: '-73.96654'
+      latitude: '40.808411'
+-
+  name: '10028'
+  boundaries:
+    -
+      longitude: '-73.942613'
+      latitude: '40.777647'
+    -
+      longitude: '-73.960046'
+      latitude: '40.782091'
+    -
+      longitude: '-73.963122'
+      latitude: '40.777647'
+    -
+      longitude: '-73.94774'
+      latitude: '40.770127'
+-
+  name: '10029'
+  boundaries:
+    -
+      longitude: '-73.930991'
+      latitude: '40.794054'
+    -
+      longitude: '-73.946373'
+      latitude: '40.800549'
+    -
+      longitude: '-73.949108'
+      latitude: '40.796789'
+    -
+      longitude: '-73.955602'
+      latitude: '40.787902'
+    -
+      longitude: '-73.943639'
+      latitude: '40.782774'
+-
+  name: '10030'
+  boundaries:
+    -
+      longitude: '-73.94398'
+      latitude: '40.823793'
+    -
+      longitude: '-73.948082'
+      latitude: '40.817298'
+    -
+      longitude: '-73.941929'
+      latitude: '40.812854'
+    -
+      longitude: '-73.936119'
+      latitude: '40.820374'
+-
+  name: '10031'
+  boundaries:
+    -
+      longitude: '-73.94398'
+      latitude: '40.823793'
+    -
+      longitude: '-73.94022'
+      latitude: '40.830287'
+    -
+      longitude: '-73.954577'
+      latitude: '40.827894'
+    -
+      longitude: '-73.957995'
+      latitude: '40.823109'
+    -
+      longitude: '-73.948082'
+      latitude: '40.817298'
+-
+  name: '10032'
+  boundaries:
+    -
+      longitude: '-73.954577'
+      latitude: '40.827894'
+    -
+      longitude: '-73.94022'
+      latitude: '40.830287'
+    -
+      longitude: '-73.934409'
+      latitude: '40.836098'
+    -
+      longitude: '-73.930991'
+      latitude: '40.842251'
+    -
+      longitude: '-73.946715'
+      latitude: '40.850796'
+-
+  name: '10033'
+  boundaries:
+    -
+      longitude: '-73.928598'
+      latitude: '40.847036'
+    -
+      longitude: '-73.933726'
+      latitude: '40.863102'
+    -
+      longitude: '-73.932358'
+      latitude: '40.869938'
+    -
+      longitude: '-73.946715'
+      latitude: '40.850796'
+    -
+      longitude: '-73.930991'
+      latitude: '40.842251'
+-
+  name: '10034'
+  boundaries:
+    -
+      longitude: '-73.932358'
+      latitude: '40.869938'
+    -
+      longitude: '-73.933726'
+      latitude: '40.863102'
+    -
+      longitude: '-73.918344'
+      latitude: '40.860025'
+-
+  name: '10035'
+  boundaries:
+    -
+      longitude: '-73.933384'
+      latitude: '40.807385'
+    -
+      longitude: '-73.939879'
+      latitude: '40.809436'
+    -
+      longitude: '-73.944664'
+      latitude: '40.803283'
+    -
+      longitude: '-73.946373'
+      latitude: '40.800549'
+    -
+      longitude: '-73.930991'
+      latitude: '40.794054'
+-
+  name: '10036'
+  boundaries:
+    -
+      longitude: '-73.978162'
+      latitude: '40.757138'
+    -
+      longitude: '-73.981239'
+      latitude: '40.758505'
+    -
+      longitude: '-74.001406'
+      latitude: '40.76124'
+    -
+      longitude: '-73.980897'
+      latitude: '40.753378'
+-
+  name: '10037'
+  boundaries:
+    -
+      longitude: '-73.934068'
+      latitude: '40.819349'
+    -
+      longitude: '-73.936119'
+      latitude: '40.820374'
+    -
+      longitude: '-73.941929'
+      latitude: '40.812854'
+    -
+      longitude: '-73.939879'
+      latitude: '40.809436'
+    -
+      longitude: '-73.933384'
+      latitude: '40.807385'
+-
+  name: '10038'
+  boundaries:
+    -
+      longitude: '-74.00585'
+      latitude: '40.704156'
+    -
+      longitude: '-74.005508'
+      latitude: '40.704156'
+    -
+      longitude: '-73.999355'
+      latitude: '40.707916'
+    -
+      longitude: '-73.997304'
+      latitude: '40.714069'
+    -
+      longitude: '-73.998671'
+      latitude: '40.713385'
+    -
+      longitude: '-74.009951'
+      latitude: '40.709625'
+    -
+      longitude: '-74.010293'
+      latitude: '40.708941'
+-
+  name: '10039'
+  boundaries:
+    -
+      longitude: '-73.934409'
+      latitude: '40.836098'
+    -
+      longitude: '-73.94022'
+      latitude: '40.830287'
+    -
+      longitude: '-73.94398'
+      latitude: '40.823793'
+    -
+      longitude: '-73.936119'
+      latitude: '40.820374'
+    -
+      longitude: '-73.934068'
+      latitude: '40.819349'
+-
+  name: '10040'
+  boundaries:
+    -
+      longitude: '-73.928598'
+      latitude: '40.847036'
+    -
+      longitude: '-73.918344'
+      latitude: '40.860025'
+    -
+      longitude: '-73.933726'
+      latitude: '40.863102'
+-
+  name: '10128'
+  boundaries:
+    -
+      longitude: '-73.943639'
+      latitude: '40.782774'
+    -
+      longitude: '-73.955602'
+      latitude: '40.787902'
+    -
+      longitude: '-73.960046'
+      latitude: '40.782091'
+    -
+      longitude: '-73.942613'
+      latitude: '40.777647'
+-
+  name: '10280'
+  boundaries:
+    -
+      longitude: '-74.017471'
+      latitude: '40.703814'
+    -
+      longitude: '-74.016104'
+      latitude: '40.706891'
+    -
+      longitude: '-74.011319'
+      latitude: '40.710309'
+    -
+      longitude: '-74.016446'
+      latitude: '40.713385'
+
+
