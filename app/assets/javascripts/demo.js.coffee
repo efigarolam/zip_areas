@@ -1,8 +1,9 @@
 window.ZipAreasMap ||= {}
 
 $ ->
-  ZipAreasMap.selectedZipCodes = []
+  ZipAreasMap.selectedZipCodes = $('#zip-codes').val().split(',')
   ZipAreasMap.initialize()
+  $('#selected-zip-codes').text(ZipAreasMap.selectedZipCodes)
 
   $('#change-color').click ->
     color = RandomColor.generate()
