@@ -148,7 +148,7 @@ We need to specify the height and width of our Map. I have already specified the
 
 ### The Map initializer
 
-Here is the code which will initiliaze the Map with all the Zip Area Polygons. The file is called `map.js.coffee`
+Here is the code which will initialize the Map with all the Zip Area Polygons. The file is called `map.js.coffee`
 
     ZipAreasMap.initialize = ->
       canvas = $('#zip-area-map-canvas').get(0)
