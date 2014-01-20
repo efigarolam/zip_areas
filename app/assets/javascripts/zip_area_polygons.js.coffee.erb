@@ -1,43 +1,40 @@
-window.ZipAreasMap ||= {}
-window.RandomColor = {}
+# window.ZipAreasMap ||= {}
+# window.RandomColor ||= {}
 
-ZipAreasMap.zipCodes = []
+# ZipAreasMap.zipCodes = []
 
-RandomColor.generate = ->
-  '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6)
+# <% zip_codes = YAML.load_file('config/ny_zip_areas.yml') %>
 
-<% zip_codes = YAML.load_file('config/ny_zip_areas.yml') %>
+# <% zip_codes.each do |zp| %>
+# color = RandomColor.generate()
 
-<% zip_codes.each do |zp| %>
-color = RandomColor.generate()
+# ZipAreasMap.zipCodes.push(
+#   boundaries: [
+# <% zp['boundaries'].each do |b| %>
+#     new google.maps.LatLng(<%= b['latitude'] %>, <%= b['longitude'] %>),
+# <% end %>
+#   ]
 
-ZipAreasMap.zipCodes.push(
-  boundaries: [
-<% zp['boundaries'].each do |b| %>
-    new google.maps.LatLng(<%= b['latitude'] %>, <%= b['longitude'] %>),
-<% end %>
-  ]
+#   polygon: ->
+#     new google.maps.Polygon(
+#       paths: @boundaries
+#       strokeColor: color
+#       strokeOpacity: 0.8
+#       strokeWeight: 2
+#       fillColor: color
+#       fillOpacity: @isCurrent('<%= zp["name"] %>', 'opacity')
+#       zipCode: '<%= zp["name"] %>'
+#       active: @isCurrent('<%= zp["name"] %>', 'active')
+#     )
 
-  polygon: ->
-    new google.maps.Polygon(
-      paths: @boundaries
-      strokeColor: color
-      strokeOpacity: 0.8
-      strokeWeight: 2
-      fillColor: color
-      fillOpacity: @isCurrent('<%= zp["name"] %>', 'opacity')
-      zipCode: '<%= zp["name"] %>'
-      active: @isCurrent('<%= zp["name"] %>', 'active')
-    )
+#   isCurrent: (zipCode, property) ->
+#     isCurrent = ZipAreasMap.selectedZipCodes.filter (zip) ->
+#       zip is zipCode
 
-  isCurrent: (zipCode, property) ->
-    isCurrent = ZipAreasMap.selectedZipCodes.filter (zip) ->
-      zip is zipCode
-
-    return 0.5 if isCurrent.length and property is 'opacity'
-    return 0 if property is 'opacity'
-    return true if isCurrent.length and property is 'active'
-    return false
-)
-<% end %>
+#     return 0.5 if isCurrent.length and property is 'opacity'
+#     return 0 if property is 'opacity'
+#     return true if isCurrent.length and property is 'active'
+#     return false
+# )
+# <% end %>
 

@@ -7,20 +7,13 @@ ZipAreasMap.initialize = ->
     mapOptions =
       center: new google.maps.LatLng(40.75532,-73.983677)
       zoom: 12
-      mapTypeControl: false
-      streetViewControl: false
-      zoomControl: false
-      scrollwheel: false
-      overviewMapControl: false
-      panControl: false
-      scaleControl: false
 
     map = new google.maps.Map(canvas, mapOptions)
 
     ZipAreasMap.polygons = []
 
-    ZipAreasMap.zipCodes.forEach (zp) ->
-      ZipAreasMap.polygons.push zp.polygon()
+    ZipAreasMap.zipCodes.forEach (zipArea) ->
+      ZipAreasMap.polygons.push zipArea.polygon()
 
     ZipAreasMap.setActiveZipCodes = ->
       activePolygons = ZipAreasMap.polygons.filter (polygon) ->
@@ -33,7 +26,7 @@ ZipAreasMap.initialize = ->
     ZipAreasMap.polygons.forEach (polygon) ->
       polygon.setMap map
 
-      google.maps.event.addListener polygon, "click", (event) ->
+      google.maps.event.addListener polygon, "click", ->
         fillOpacity = (if @fillOpacity is 0 then 0.5 else 0)
         @setOptions
           fillOpacity: fillOpacity
