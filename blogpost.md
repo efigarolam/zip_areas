@@ -2,7 +2,7 @@
 
 What's up? In this time I'm going to show you how to build an interactive Zip Areas map, using the Google Maps API and a simple Rails application. I want to highlight that Rails is not a requirement. I'm just using Rails to automatically generate Javascript objects, from a YAML file. So, in summary, you should be able to do it using any framework or web language.
 
-You can check what I'm talking about on [this demo](http://zip-areas.herokuapp.com).
+You can check what I'm talking about on [this demo](http://zipareas.herokuapp.com).
 
 ### Setting up the project
 
@@ -129,7 +129,7 @@ Working with Google Maps is very easy, for HTML markup we just need the followin
 
     .col-lg-8
       #zip-area-map-canvas
-      %input{type: 'hidden', value: "#{@zip_codes}", id: 'zip-codes'}
+      %input#zip-codes{type: 'hidden', value: "#{@zip_codes}"}
     .col-lg-4
       %p You have selected the following zip codes:
       %p#selected-zip-codes
@@ -183,6 +183,18 @@ Here is the code which will initiliaze the Map with all the Zip Area Polygons. T
             this.active = !this.active
             ZipAreasMap.setActiveZipCodes()
 
+### Pre-selecting Zip Areas
+
+We can pre-select zip areas from our Map, I made it work just adding the following code in the controller that renders the Map's view:
+
+    class DemoController < ApplicationController
+      def index
+        @zip_codes = params[:zip_codes]
+      end
+    end
+
+Remember that I used that instance variable on the `#zip-codes` hidden input.
+
 ### Finishing up
 
 We are ready to see it working, you just need add this code, I called the file as `demo.js.coffee`:
@@ -190,10 +202,15 @@ We are ready to see it working, you just need add this code, I called the file a
     window.ZipAreasMap ||= {}
 
     $ ->
+      # Splitting the zip codes from the hidden input.
       ZipAreasMap.selectedZipCodes = $('#zip-codes').val().split(',')
+      
+      # Initializing the Map.
       ZipAreasMap.initialize()
+      
       $('#selected-zip-codes').text(ZipAreasMap.selectedZipCodes)
-
+      
+      # Change color button
       $('#change-color').click ->
         color = RandomColor.generate()
         ZipAreasMap.polygons.forEach (polygon) ->
@@ -202,3 +219,5 @@ We are ready to see it working, you just need add this code, I called the file a
             strokeColor: color
 
 As you could notice, I am initializing the map when the document is ready!
+
+I hope you could find this useful! Thanks for reading and see you next time!
