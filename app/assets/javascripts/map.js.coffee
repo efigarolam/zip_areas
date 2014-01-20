@@ -1,5 +1,3 @@
-window.ZipAreasMap ||= {}
-
 ZipAreasMap.initialize = ->
   canvas = $('#zip-area-map-canvas').get(0)
 
