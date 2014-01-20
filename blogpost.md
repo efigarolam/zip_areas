@@ -59,14 +59,13 @@ The next step is to generate a YAML file which will contains all the boundaries 
           longitude: '-73.992583'
           latitude: '40.724137'
 
-I got the data from [this document](). The precision increases with the number of boundaries.
+I got the data from [this document](https://www.google.com/fusiontables/DataSource?docid=1Lae-86jeUDLmA6-8APDDqazlTOy1GsTXh28DAkw). The precision increases with the number of boundaries.
 
 ### Generating Polygon objects from the YAML file
 
 In order to show the Zip Areas on the Map, we will be using Polygons, which are an object from the Google Maps API used to draw areas. Here is the code where I'm generating an array of ZipCodes and its Polygons, then in other place I will draw those Polygons on the map. I called this file `zip_area_polygons.js.coffee.erb`:
 
     window.ZipAreasMap ||= {}
-    window.RandomColor ||= {}
 
     # Array of ZipCodes
     ZipAreasMap.zipCodes = []
@@ -117,12 +116,12 @@ In order to show the Zip Areas on the Map, we will be using Polygons, which are 
 
 ### Random Color generator
 
-Looking a little bit on Internet, I have found this method to generate Random Colors, check it out, I put that on `random_color.js.coffee` file:
+Looking a little bit on Internet, I have found [this method](http://www.paulirish.com/2009/random-hex-color-code-snippets/) to generate Random Colors, check it out, I put that on `random_color.js.coffee` file:
 
     window.RandomColor ||= {}
 
     RandomColor.generate = ->
-      '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6)
+      '#' + ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6)
 
 ### The markup
 
@@ -130,6 +129,7 @@ Working with Google Maps is very easy, for HTML markup we just need the followin
 
     .col-lg-8
       #zip-area-map-canvas
+      %input{type: 'hidden', value: "#{@zip_codes}", id: 'zip-codes'}
     .col-lg-4
       %p You have selected the following zip codes:
       %p#selected-zip-codes
@@ -149,8 +149,6 @@ We need to specify the height and width of our Map. I have already specified the
 ### The Map initializer
 
 Here is the code which will initiliaze the Map with all the Zip Area Polygons. The file is called `map.js.coffee`
-
-    window.ZipAreasMap ||= {}
 
     ZipAreasMap.initialize = ->
       canvas = $('#zip-area-map-canvas').get(0)
@@ -192,8 +190,9 @@ We are ready to see it working, you just need add this code, I called the file a
     window.ZipAreasMap ||= {}
 
     $ ->
-      ZipAreasMap.selectedZipCodes = []
+      ZipAreasMap.selectedZipCodes = $('#zip-codes').val().split(',')
       ZipAreasMap.initialize()
+      $('#selected-zip-codes').text(ZipAreasMap.selectedZipCodes)
 
       $('#change-color').click ->
         color = RandomColor.generate()
