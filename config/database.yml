@@ -1,4 +1,4 @@
-development:
+development: &common
   adapter: postgresql
   encoding: unicode
   database: schedulesavvy_development
@@ -7,17 +7,12 @@ development:
   password:
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *common
   database: schedulesavvy_test
-  pool: 5
-  username:
-  password:
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *common
   database: schedulesavvy_production
-  pool: 5
-  username:
-  password:
+
+# Matching environments specified in this file will override the above
+<%= IO.read("config/database.local.yml") if File.exists?("config/database.local.yml") %>
