@@ -6,7 +6,7 @@ describe Coordinate do
   it { expect(coordinate).to respond_to(:longitude) }
   it { expect(coordinate).to respond_to(:latitude) }
   it { expect(coordinate).to respond_to(:zipcode_id) }
-  it { expect(coordinate).to belongs_to(:zipcode) }
+  it { expect(coordinate).to belong_to(:zipcode) }
   it { expect(coordinate).to be_valid }
 
   describe "longitude validations fails" do
@@ -19,7 +19,7 @@ describe Coordinate do
       expect(coordinate).to_not be_valid
     end
     it "is too short" do
-      coordinate.longitude = "1" * 8
+      coordinate.longitude = "1" * 7
       expect(coordinate).to_not be_valid
     end
     it "isn't a number" do
@@ -38,7 +38,7 @@ describe Coordinate do
       expect(coordinate).to_not be_valid
     end
     it "is too short" do
-      coordinate.latitude = "1" * 8
+      coordinate.latitude = "1" * 7
       expect(coordinate).to_not be_valid
     end
     it "isn't a number" do

@@ -4,7 +4,7 @@ describe Zipcode do
   let(:zipcode) { create(:zipcode) }
 
   it { expect(zipcode).to respond_to(:name) }
-  it { expect(zipcode).to have_many(:zipcodes) }
+  it { expect(zipcode).to have_many(:coordinates) }
   it { expect(zipcode).to be_valid }
 
   describe "name validations" do
