@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402172656) do
+ActiveRecord::Schema.define(version: 20140402183033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coordinates", force: true do |t|
+    t.string   "longitude"
+    t.string   "latitude"
+    t.integer  "zipcode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "coordinates", ["zipcode_id"], name: "index_coordinates_on_zipcode_id", using: :btree
 
   create_table "zipcodes", force: true do |t|
     t.string   "name"
