@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20140402183033) do
   enable_extension "plpgsql"
 
   create_table "coordinates", force: true do |t|
-    t.string   "longitude"
-    t.string   "latitude"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
     t.integer  "zipcode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
