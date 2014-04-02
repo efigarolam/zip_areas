@@ -8,8 +8,8 @@ describe Zipcode do
   it { expect(zipcode).to have_many(:coordinates).dependent(:destroy) }
   it { expect(zipcode).to be_valid }
 
-  describe "name validations" do
-    it "is nil the name" do
+  describe "#name validation" do
+    it "fails with nil value" do
       zipcode.name = nil
       expect(zipcode).to_not be_valid
     end
