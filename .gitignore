@@ -17,3 +17,5 @@
 
 # Ignore personal database info
 /config/database.local.yml
+.ruby-gemset
+.ruby-version
