@@ -10,3 +10,18 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
+group :test do
+  gem 'nyan-cat-formatter'
+  gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
