@@ -65,4 +65,50 @@ describe Api::V1::CoordinatesController do
       end
     end
   end
+
+  describe "#update" do
+    context "valid data" do
+      before { patch :update, id: coordinate1, coordinate: new_coordinate }
+
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.status).to eq 204 }
+      it { expect(response.body).to eq "" }
+    end
+
+    context "invalid data" do
+      before do
+        new_coordinate[:longitude] = ""
+        post :create, coordinate: new_coordinate, format: :json
+      end
+
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.status).to eq 422 }
+      it "returns a json with errors" do
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:longitude]).to eq ["can't be blank", "is not a number"]
+      end
+    end
+  end
+
+  describe "#destroy" do
+    context "record exits" do
+      before { delete :destroy, id: coordinate1 }
+
+      it { expect(Coordinate.count).to eq 1 }
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.status).to eq 204 }
+      it { expect(response.body).to eq "" }
+    end
+
+    context "record doesn't exist" do
+      before { delete :destroy, id: "xxx" }
+
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.status).to eq 404 }
+      it "returns error message" do
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:error]).to eq "Sorry, but this record doesn't exist"
+      end
+    end
+  end
 end
