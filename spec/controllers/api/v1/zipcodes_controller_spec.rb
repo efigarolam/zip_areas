@@ -3,24 +3,66 @@ require "spec_helper"
 describe Api::V1::ZipcodesController do
   let!(:zipcode1) { create(:zipcode) }
   let!(:zipcode2) { create(:zipcode) }
-  let(:zipcode) { attributes_for(:zipcode) }
+  let(:new_zipcode) { attributes_for(:zipcode, name: "test") }
 
   describe "#index" do
     before { get :index }
 
-    it "returns 200 code status" do
-      expect(response.status).to eq 200
-    end
+    it { expect(response.status).to eq 200 }
+    it { expect(response.content_type).to eq "application/json" }
     it "returns all of zipcodes" do
       zipcodes = JSON.parse(response.body, symbolize_names: true)
       expect(zipcodes.count).to eq Zipcode.count
     end
-    it "returns a JSON" do
-      expect(response.content_type).to eq "application/json"
+  end
+
+  describe "#show" do
+    context "the record exists" do
+      before { get :show, id: zipcode1.id }
+
+      it { expect(response.status).to eq 200 }
+      it { expect(response.content_type).to eq "application/json" }
+      it "returns zipcode1" do
+        zipcode = JSON.parse(response.body, symbolize_names: true)
+        expect(zipcode[:id]).to eq zipcode1.id
+      end
     end
-    it "goes to #index action" do
-      expect(get: api_v1_zipcodes_path).to route_to(
-        controller: "api/v1/zipcodes", action: "index", format: "json")
+
+    context "record doesn't exist" do
+      before { get :show, id: "xxx" }
+
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.status).to eq 404 }
+      it "returns error message" do
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:error]).to eq "Sorry, but this record doesn't exist"
+      end
+    end
+  end
+
+  describe "#create" do
+    context "valid data" do
+      before { post :create , zipcode: new_zipcode, format: :json }
+
+      it { expect(Zipcode.count).to eq 3 }
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.body).to eq " " }
+      it { expect(response.status).to eq 204 }
+    end
+
+    context "invalid data" do
+      before do
+        new_zipcode[:name] = ""
+        post :create, zipcode: new_zipcode, format: :json
+      end
+
+      it { expect(Zipcode.count).to eq 2 }
+      it { expect(response.content_type).to eq "application/json" }
+      it { expect(response.status).to eq 422 }
+      it "returns a json with the errors" do
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:name]).to eq ["can't be blank"]
+      end
     end
   end
 end
