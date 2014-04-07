@@ -4,8 +4,6 @@ module Api
       expose(:coordinate, attributes: :coordinate_params)
       expose(:coordinates)
 
-      rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
       def index
         render json: coordinates, status: 200
       end
@@ -45,11 +43,7 @@ module Api
           :zipcode_id
         )
       end
-
-      def record_not_found
-        render json: { error: "Sorry, but this record doesn't exist"},
-          status: 404
-      end
     end
   end
 end
+

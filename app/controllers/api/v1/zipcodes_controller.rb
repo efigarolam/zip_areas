@@ -5,8 +5,6 @@ module Api
       expose(:new_zipcode) { zipcodes.build(zipcode_params) }
       expose(:zipcodes)
 
-      rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
       def index
         render json: zipcodes, status: 200
       end
@@ -44,11 +42,7 @@ module Api
           :name
         )
       end
-
-      def record_not_found
-        render json: { error: "Sorry, but this record doesn't exist"},
-          status: 404
-      end
     end
   end
 end
+
