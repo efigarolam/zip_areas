@@ -1,15 +1,10 @@
 require "spec_helper"
+require "support/shared_examples"
 
 describe Api::V1::CoordinatesController do
   let!(:coordinate1) { create(:coordinate) }
   let!(:coordinate2) { create(:coordinate) }
   let(:new_coordinate) { attributes_for(:coordinate) }
-
-  shared_examples_for "response" do
-    it { expect(response.content_type).to eq "application/json" }
-    it { expect(response.status).to eq http_code }
-    it { expect(response.body).to eq response_body }
-  end
 
   describe "#index" do
     let(:http_code) { 200 }

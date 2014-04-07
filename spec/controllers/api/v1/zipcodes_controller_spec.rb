@@ -1,15 +1,10 @@
 require "spec_helper"
+require "support/shared_examples"
 
 describe Api::V1::ZipcodesController do
   let!(:zipcode1) { create(:zipcode) }
   let!(:zipcode2) { create(:zipcode) }
   let(:new_zipcode) { attributes_for(:zipcode) }
-
-  shared_examples_for "response" do
-    it { expect(response.content_type).to eq "application/json" }
-    it { expect(response.status).to eq http_code }
-    it { expect(response.body).to eq response_body }
-  end
 
   describe "#index" do
     let(:http_code) { 200 }

@@ -4,7 +4,7 @@ class Api::V1::BaseController < ApplicationController
   protected
 
   def record_not_found
-    render json: { error: "Sorry, but this record doesn't exist"},
+    render json: { error: "Sorry, but this record doesn't exist" },
       status: 404
   end
 end
