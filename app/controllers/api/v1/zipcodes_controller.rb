@@ -17,9 +17,23 @@ module Api
 
       def create
         if new_zipcode.save
-          render nothing: true, status: 204
+          render json: "", status: 204
         else
           render json: new_zipcode.errors, status: 422
+        end
+      end
+
+      def update
+        if zipcode.update(zipcode_params)
+          render json: "", status: 204
+        else
+          render json: zipcode.errors, status: 422
+        end
+      end
+
+      def destroy
+        if zipcode.destroy
+          render json: "", status: 204
         end
       end
 
