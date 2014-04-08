@@ -14,7 +14,7 @@ module Api
 
       def create
         if coordinate.save
-          render json: "", status: 204
+          render json: '', status: 204
         else
           render json: coordinate.errors, status: 422
         end
@@ -22,7 +22,7 @@ module Api
 
       def update
         if coordinate.update(coordinate_params)
-          render json: "", status: 204
+          render json: '', status: 204
         else
           render json: coordinate.errors, status: 422
         end
@@ -30,7 +30,7 @@ module Api
 
       def destroy
         if coordinate.destroy
-          render json: "", status: 204
+          render json: '', status: 204
         end
       end
 
