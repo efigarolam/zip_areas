@@ -10,7 +10,6 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'decent_exposure'
 
 group :development, :test do
   gem 'pry'
@@ -26,3 +25,4 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
+
