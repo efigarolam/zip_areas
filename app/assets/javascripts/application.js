@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require custom/demo
+//= require custom/map
+//= require custom/random_color
+//= require custom/zip_area_polygons
