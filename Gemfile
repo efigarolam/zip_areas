@@ -16,6 +16,7 @@ group :development, :test do
   gem 'pry-remote'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'teaspoon'
+  gem 'phantomjs'
 end
 
 group :test do
