@@ -6,7 +6,7 @@ development: &common
   username:
   password:
 
-test:
+test: &test
   <<: *common
   database: schedulesavvy_test
 
@@ -16,3 +16,6 @@ production:
 
 # Matching environments specified in this file will override the above
 <%= IO.read("config/database.local.yml") if File.exists?("config/database.local.yml") %>
+
+cucumber:
+  <<: *test
