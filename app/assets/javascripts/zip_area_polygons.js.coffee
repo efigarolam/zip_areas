@@ -1,7 +1,6 @@
 window.ZipAreasMap ||= {}
 
 ZipAreasMap.zipCodes = []
-debugger
 color = RandomColor.generate()
 $.ajax("/api/v1/zipcodes", {
   success: (response) ->
@@ -32,5 +31,6 @@ $.ajax("/api/v1/zipcodes", {
           return true if isCurrent.length and property is 'active'
           return false
       )
+    ZipAreasMap.initialize()
 })
 
