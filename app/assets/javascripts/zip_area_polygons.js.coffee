@@ -1,15 +1,19 @@
 window.ZipAreasMap ||= {}
 
+getCoordinates = (array, zipcode) ->
+  zipcode.coordinates.forEach (coordinate) ->
+    array.push(
+      new google.maps.LatLng(coordinate.latitude, coordinate.longitude)
+    )
+  array
+
 ZipAreasMap.zipCodes = []
 color = RandomColor.generate()
 $.ajax("/api/v1/zipcodes", {
   success: (response) ->
     response.forEach (zipcode) ->
       array = []
-      zipcode.coordinates.forEach (coordinate) ->
-        array.push(
-          new google.maps.LatLng(coordinate.latitude, coordinate.longitude)
-        )
+      getCoordinates(array, zipcode)
       ZipAreasMap.zipCodes.push(
         boundaries: array
         polygon: ->
