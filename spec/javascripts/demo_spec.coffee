@@ -1,4 +1,4 @@
-# require custom/demo.coffee
+# require demo
 
 describe "demo", ->
   it "creates a zipAreasMap object", ->

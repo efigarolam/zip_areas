@@ -1,4 +1,4 @@
-#= require custom/random_color
+#= require random_color
 
 describe 'random_color', ->
   it "returns hexagesimal color code", ->

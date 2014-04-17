@@ -1,4 +1,4 @@
-# require custom/map
+# require map
 
 describe "map", ->
   describe "when canvas is undefined", ->
