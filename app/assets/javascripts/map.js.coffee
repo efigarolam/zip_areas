@@ -1,3 +1,5 @@
+debugger
+
 ZipAreasMap.initialize = ->
   canvas = $('#zip-area-map-canvas').get(0)
 
@@ -17,7 +19,9 @@ ZipAreasMap.initialize = ->
       activePolygons = ZipAreasMap.polygons.filter (polygon) ->
         polygon.active is true
 
-      ZipAreasMap.selectedZipCodes = activePolygons.map (polygon) -> polygon.zipCode
+      ZipAreasMap.selectedZipCodes = []
+      activePolygons.forEach (polygon) ->
+        ZipAreasMap.selectedZipCodes.push polygon.zipcode
 
       $('#selected-zip-codes').text(ZipAreasMap.selectedZipCodes.join(', '))
 
