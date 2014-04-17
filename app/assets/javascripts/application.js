@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require demo
-//= require map
-//= require random_color
-//= require zip_area_polygons
+//= require custom/demo
+//= require custom/map
+//= require custom/random_color
+//= require custom/zip_area_polygons
