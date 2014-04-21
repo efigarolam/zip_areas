@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title ZipAreas
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCz_zH3tdhZkJr1z_SF5g385iAZBfsJHF8&sensor=true"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .container
+      .row
+        .jumbotron
+          %h2 Zip Area Demo
+          %p Please select some Zip Areas
+          %button#change-color.btn.btn-danger.pull-right Change color
+      .row
+        .col-lg-8
+          #zip-area-map-canvas
+          %input#zip-codes{type: 'hidden', value: ""}
+        .col-lg-4
+          %p You have selected the following zip codes:
+          %p#selected-zip-codes

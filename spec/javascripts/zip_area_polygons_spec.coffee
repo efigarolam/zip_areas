@@ -83,7 +83,9 @@ describe 'zip_area_polygons', ->
   describe 'ajax request', ->
 
     it 'executes the initialize method', ->
-      spyOn($, 'ajax').andCallFake (response) ->
-        response.success ->
-          ZipAreasMap.initialize()
+      a = new ZoipAreasMap
+
+      a = spyOn($, "ajax").andCallFake ->
+        ZipAreasMap.initialize()
       expect(ZipAreasMap.initialize()).toHaveBeenCalled()
+
