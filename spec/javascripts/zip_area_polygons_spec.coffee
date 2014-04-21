@@ -29,7 +29,56 @@ describe 'zip_area_polygons', ->
 
   describe 'ZipAreasMap.createZipCode()', ->
 
-    it
+    it 'creates a zipcode object', ->
+      array = [{ A: 1, k: 1 }, { A: 2, k: 1 }, { A: 2, k: 2 }]
+      zipcode = { name: 'dummy' }
+      zipCodeObject = ZipAreasMap.createZipCode(array, zipcode)
+      expect(zipCodeObject).toBeDefined()
+    it 'has a boundaries array with 3 elements', ->
+      array = [{ A: 1, k: 1 }, { A: 2, k: 1 }, { A: 2, k: 2 }]
+      zipcode = { name: 'dummy' }
+      zipCodeObject = ZipAreasMap.createZipCode(array, zipcode)
+      expect(zipCodeObject.boundaries.length).toEqual(3)
+    it 'calls the polygon function', ->
+      array = [{ A: 1, k: 1 }, { A: 2, k: 1 }, { A: 2, k: 2 }]
+      zipcode = { name: 'dummy' }
+      zipCodeObject = ZipAreasMap.createZipCode(array, zipcode)
+      expect(zipCodeObject.polygon).toHaveBeenCalled
+    it 'calls the isCurrent function', ->
+      array = [{ A: 1, k: 1 }, { A: 2, k: 1 }, { A: 2, k: 2 }]
+      zipcode = { name: 'dummy' }
+      zipCodeObject = ZipAreasMap.createZipCode(array, zipcode)
+      expect(zipCodeObject.isCurrent).toHaveBeenCalled
+
+    describe 'isCurrent()', ->
+
+      array = []
+      zipcode = null
+      ZipAreasMap.selectedZipCodes = []
+      zipCodeObject = null
+
+      describe 'active zipcodes', ->
+
+        beforeEach ->
+          array = [{ A: 1, k: 1 }, { A: 2, k: 1 }, { A: 2, k: 2 }]
+          zipcode = { name: 'dummy' }
+          ZipAreasMap.selectedZipCodes = ['dummy']
+          zipCodeObject = ZipAreasMap.createZipCode(array, zipcode)
+        it 'returns an opacity of 0.5', ->
+          expect(zipCodeObject.isCurrent(zipcode.name, 'opacity')).toEqual(0.5)
+        it 'returns true', ->
+          expect(zipCodeObject.isCurrent(zipcode.name, 'active')).toEqual(true)
+
+      describe 'inactive zipcodes', ->
+        beforeEach ->
+          array = [{ A: 1, k: 1 }, { A: 2, k: 1 }, { A: 2, k: 2 }]
+          zipcode = { name: 'dummy' }
+          ZipAreasMap.selectedZipCodes = ['']
+          zipCodeObject = ZipAreasMap.createZipCode(array, zipcode)
+        it 'returns an opacity of 0.5', ->
+          expect(zipCodeObject.isCurrent(zipcode.name, 'opacity')).toEqual(0)
+        it 'returns true', ->
+          expect(zipCodeObject.isCurrent(zipcode.name, 'active')).toEqual(false)
 
   describe 'ajax request', ->
 
