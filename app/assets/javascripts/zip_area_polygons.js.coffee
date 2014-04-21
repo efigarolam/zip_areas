@@ -12,7 +12,7 @@ ZipAreasMap.createZipCode = (array, zipcode) ->
   boundaries: array
   polygon: ->
     new google.maps.Polygon(
-      paths: @boundaries,
+      paths: @boundaries
       strokeColor: color
       strokeOpacity: 0.8
       strokeWeight: 2
