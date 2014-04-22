@@ -9,5 +9,13 @@ class App.Zipcode
       strokeOpacity: 0.8
       strokeWeight: 2
       fillColor: "#000"
+      fillOpacity: 0
     )
+  createPolygon: ->
+    polygon = @polygon()
+    polygon.setMap map
+    google.maps.event.addListener polygon, "click", ->
+      fillOpacity = (if @fillOpacity is 0 then 0.5 else 0)
+      @setOptions
+        fillOpacity: fillOpacity
 

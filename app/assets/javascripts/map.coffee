@@ -22,6 +22,5 @@ class App.Map
         zoom: 12
     map = new google.maps.Map(@canvas, mapOptions)
     @zipcodes.forEach (zipcode) ->
-      polygon = zipcode.polygon()
-      polygon.setMap map
+      zipcode.createPolygon()
 
