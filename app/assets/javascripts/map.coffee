@@ -5,15 +5,15 @@ class App.Map
     @canvas = $('#zip-area-map-canvas').get(0)
   zipcodes: []
   getData: ->
-    map = this
+    googlemap = this
     $.ajax('/api/v1/zipcodes', {
       success: (response) ->
         response.forEach (element) ->
           boundaries = []
           element.coordinates.forEach (coordinate) ->
             boundaries.push(new google.maps.LatLng(coordinate.latitude, coordinate.longitude))
-          map.zipcodes.push(new window.App.Zipcode(element.name, boundaries))
-        map.zipcodes
+          googlemap.zipcodes.push(new window.App.Zipcode(element.name, boundaries))
+        googlemap.zipcodes
     })
   initialize: ->
     if @canvas
@@ -21,6 +21,8 @@ class App.Map
         center: new google.maps.LatLng(40.75532, -73.983677)
         zoom: 12
     map = new google.maps.Map(@canvas, mapOptions)
+    color = new App.Color()
+    randomColor = color.generate()
     @zipcodes.forEach (zipcode) ->
-      zipcode.createPolygon()
+      zipcode.createPolygon(randomColor, map)
 
