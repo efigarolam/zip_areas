@@ -1,18 +1,13 @@
 window.App ||= {}
 
 class App.Zipcode
-  constructor: (@zipcode, @boundaries) ->
-  isCurrent: ->
-    return false
+  constructor: (@name, @boundaries) ->
   polygon: ->
     new google.maps.Polygon(
       paths: @boundaries
-      strokeColor: color
+      strokeColor: "#000"
       strokeOpacity: 0.8
       strokeWeight: 2
-      fillColor: color
-      fillOpacity: @isCurrent(@zipcode.name, 'opacity')
-      zipcode: @zipcode.name
-      active: @isCurrent(@zipcode.name, 'active')
+      fillColor: "#000"
     )
 
