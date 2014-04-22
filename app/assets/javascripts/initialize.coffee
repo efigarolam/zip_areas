@@ -1,7 +1,8 @@
 window.App ||= {}
 
-$(document).ready ->
+$ ->
   window.map = new window.App.Map()
+  map.selectedZipCodes = $('#zip-codes').val().split(',')
   map.getData()
   setTimeout(->
     map.initialize()
@@ -11,4 +12,3 @@ $(document).ready ->
     randomColor = color.generate()
     map.zipcodes.forEach (zipcode) ->
       zipcode.changeColor(randomColor)
-
