@@ -10,8 +10,6 @@ $ ->
   250)
 
   $('#change-color').click ->
-    color = new App.Color()
-    randomColor = color.generate()
-    map.zipcodes.forEach (zipcode) ->
-      zipcode.changeColor(randomColor)
+    randomColor = App.color()
+    zipcode.changeColor(randomColor) for zipcode in map.zipcodes
 

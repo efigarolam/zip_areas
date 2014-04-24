@@ -25,14 +25,20 @@ class App.Zipcode
   createPolygon: (color, googleMap) ->
     @polygon = @setPolygon(color)
     @polygon.setMap googleMap
+    @addListenerToPolygon(this)
+
+  addListenerToPolygon: (context) ->
     google.maps.event.addListener @polygon, "click", ->
-      fillOpacity = (if @fillOpacity is 0 then 0.5 else 0)
+      fillOpacity = if @fillOpacity is 0 then 0.5 else 0
       @setOptions
         fillOpacity: fillOpacity
       @active = !@active
-      map.selectedZipCodes = []
-      map.zipcodes.forEach (zipcode) ->
-        if zipcode.polygon.active is true
-          map.selectedZipCodes.push(zipcode.polygon.zipcode)
-      $('#selected-zip-codes').text(map.selectedZipCodes.join(', '))
+      context.getSelectedZipCodes()
+
+  getSelectedZipCodes: ->
+    map.selectedZipCodes = []
+    map.zipcodes.forEach (zipcode) ->
+      if zipcode.polygon.active
+        map.selectedZipCodes.push(zipcode.polygon.zipcode)
+    $('#selected-zip-codes').text(map.selectedZipCodes.join(', '))
 

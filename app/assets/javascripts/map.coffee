@@ -26,8 +26,7 @@ class App.Map
         center: new google.maps.LatLng(40.75532, -73.983677)
         zoom: 12
     map = new google.maps.Map(@canvas, mapOptions)
-    color = new App.Color()
-    randomColor = color.generate()
+    randomColor = App.color()
     @zipcodes.forEach (zipcode) ->
       zipcode.createPolygon(randomColor, map)
 
