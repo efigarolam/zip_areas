@@ -8,6 +8,8 @@ window.google.maps.event.addListener = (polygon, event, addFunction) ->
 
 class window.google.maps.Polygon
   constructor: (@object) ->
+  setMap: (map) ->
+    @map = map
 
 class window.google.maps.Map
   constructor: (@canvas, @mapOptions) ->
