@@ -37,4 +37,3 @@ describe 'zipcode', ->
       expect(zipcode.polygon).toBeDefined()
     it 'assigns name to the polygon', ->
 
-
