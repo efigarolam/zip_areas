@@ -6,8 +6,9 @@ $ ->
   map.getData()
 
   setTimeout(->
-    map.initialize()
+    map.create_map()
   250)
+  map.printSelectedZipCodes()
 
   $('#change-color').click ->
     randomColor = App.color()

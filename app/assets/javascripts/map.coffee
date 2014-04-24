@@ -9,18 +9,18 @@ class App.Map
   selectedZipCodes: []
 
   getData: ->
-    googlemap = this
-    $.ajax('/api/v1/zipcodes', {
-      success: (response) ->
-        response.forEach (element) ->
-          boundaries = []
-          element.coordinates.forEach (coordinate) ->
-            boundaries.push(new google.maps.LatLng(coordinate.latitude, coordinate.longitude))
-          googlemap.zipcodes.push(new window.App.Zipcode(element.name, boundaries))
-        googlemap.zipcodes
-    })
+    $get = $.get('/api/v1/zipcodes')
+    $get.success (response) => @convertToZipCode(response)
 
-  initialize: ->
+  convertToZipCode: (data) ->
+    data.forEach (element) =>
+      boundaries = []
+      boundaries.push(
+        new google.maps.LatLng(coordinate.latitude, coordinate.longitude)
+      ) for coordinate in element.coordinates
+      @zipcodes.push(new window.App.Zipcode(element.name, boundaries))
+
+  create_map: ->
     if @canvas
       mapOptions =
         center: new google.maps.LatLng(40.75532, -73.983677)
@@ -29,4 +29,7 @@ class App.Map
     randomColor = App.color()
     @zipcodes.forEach (zipcode) ->
       zipcode.createPolygon(randomColor, map)
+
+  printSelectedZipCodes: ->
+    $('#selected-zip-codes').text(map.selectedZipCodes.join(', '))
 

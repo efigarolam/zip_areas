@@ -24,8 +24,11 @@ class App.Zipcode
 
   createPolygon: (color, googleMap) ->
     @polygon = @setPolygon(color)
+    if map.selectedZipCodes.include @name
+      @polygon.active = true
+      @polygon.fillOpacity = 0.5
     @polygon.setMap googleMap
-    @addListenerToPolygon(this)
+    @addListenerToPolygon(@)
 
   addListenerToPolygon: (context) ->
     google.maps.event.addListener @polygon, "click", ->
@@ -40,5 +43,5 @@ class App.Zipcode
     map.zipcodes.forEach (zipcode) ->
       if zipcode.polygon.active
         map.selectedZipCodes.push(zipcode.polygon.zipcode)
-    $('#selected-zip-codes').text(map.selectedZipCodes.join(', '))
+    map.printSelectedZipCodes()
 
