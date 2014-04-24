@@ -3,8 +3,11 @@ window.App ||= {}
 class App.Map
   constructor: ->
     @canvas = $('#zip-area-map-canvas').get(0)
+
   zipcodes: []
+
   selectedZipCodes: []
+
   getData: ->
     googlemap = this
     $.ajax('/api/v1/zipcodes', {
@@ -16,6 +19,7 @@ class App.Map
           googlemap.zipcodes.push(new window.App.Zipcode(element.name, boundaries))
         googlemap.zipcodes
     })
+
   initialize: ->
     if @canvas
       mapOptions =
