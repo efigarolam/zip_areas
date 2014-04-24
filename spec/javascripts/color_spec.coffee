@@ -1,4 +1,4 @@
-//= require color
+#= require color
 
 describe 'Color', ->
   it "returns hexagesimal color code", ->

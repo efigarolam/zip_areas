@@ -1,4 +1,4 @@
-//= require initialize
+#= require initialize
 
 describe 'initialize', ->
 

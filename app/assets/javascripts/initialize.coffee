@@ -12,3 +12,4 @@ $ ->
     randomColor = color.generate()
     map.zipcodes.forEach (zipcode) ->
       zipcode.changeColor(randomColor)
+

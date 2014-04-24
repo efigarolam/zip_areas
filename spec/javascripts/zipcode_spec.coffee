@@ -1,4 +1,4 @@
-//= require zipcode
+#= require zipcode
 
 describe 'zipcode', ->
   zipcode = null
@@ -35,4 +35,6 @@ describe 'zipcode', ->
       map = new google.maps.Map(canvas, mapOptions)
       zipcode.createPolygon("#FFF", map)
       expect(zipcode.polygon).toBeDefined()
+    it 'assigns name to the polygon', ->
+
 
