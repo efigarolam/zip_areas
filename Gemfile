@@ -22,6 +22,7 @@ end
 group :test do
   gem 'nyan-cat-formatter'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
