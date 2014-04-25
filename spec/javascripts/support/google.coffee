@@ -1,10 +1,10 @@
-window.google ||= {}
-
-window.google.maps ||= {}
-
-window.google.maps.event ||= {}
-
-window.google.maps.event.addListener = (polygon, event, addFunction) ->
+window.google ||= {
+  maps: {
+    event: {
+      addListener: (polygon, event, addFunction) ->
+    }
+  }
+}
 
 class window.google.maps.Polygon
   constructor: (object) ->
@@ -20,4 +20,3 @@ class window.google.maps.Map
 
 class window.google.maps.LatLng
   constructor: (@k, @a) ->
-
