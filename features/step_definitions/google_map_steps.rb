@@ -5,3 +5,4 @@ end
 Then /^A google map appears$/ do
   expect(page).to have_css("#zip-area-map-canvas")
 end
+
