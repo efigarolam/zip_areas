@@ -3,3 +3,4 @@ class DemoController < ApplicationController
     @zip_codes = params[:zip_codes]
   end
 end
+

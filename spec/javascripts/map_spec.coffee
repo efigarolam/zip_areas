@@ -5,18 +5,6 @@ describe 'map', ->
 
   beforeEach ->
     fixture.load 'zipcodes'
-    coordinates1 = [
-      { k: 1, a: 1 },
-      { k: 2, a: 2 },
-      { k: 2, a: 1 },
-      { k: 1, a: 2 }
-    ]
-    coordinates2 = [
-      { k: 3, a: 3 },
-      { k: 2, a: 2 },
-      { k: 2, a: 3 },
-      { k: 3, a: 2 }
-    ]
     map = new App.Map($('#zip-areas-map-canvas'))
 
   it 'expect map to be defined' , ->
@@ -50,4 +38,15 @@ describe 'map', ->
     it 'retuns an array with selected zipcodes', ->
       map.getSelectedZipCodes()
       expect(map.selectedZipCodes.length).toEqual(0)
+
+  describe '#convertToZipCode', ->
+
+    it 'fills the zipcodes array', ->
+      data = [
+        { name: '1', coordinates: [ longitude: '1', latitude: '1' ] },
+        { name: '2', coordinates: [ longitude: '1', latitude: '1' ] },
+        { name: '3', coordinates: [ longitude: '1', latitude: '1' ] }
+      ]
+      map.convertToZipCode(data)
+      expect(map.zipcodes.length).toEqual(3)
 

@@ -69,6 +69,6 @@ describe 'zipcode', ->
 
   describe '#addListenerToPolygon', ->
 
-    it 'change the opacity when the event is triggered', ->
-      zipcode
+    it 'should be defined', ->
+      expect(zipcode.addListenerToPolygon).toBeDefined()
 
