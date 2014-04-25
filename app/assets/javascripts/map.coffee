@@ -33,3 +33,10 @@ class App.Map
   printSelectedZipCodes: ->
     $('#selected-zip-codes').text(map.selectedZipCodes.join(', '))
 
+  getSelectedZipCodes: ->
+    map.selectedZipCodes = []
+    @zipcodes.forEach (zipcode) ->
+      if zipcode.polygon.active
+        map.selectedZipCodes.push(zipcode.polygon.zipcode)
+    @printSelectedZipCodes()
+

@@ -4,7 +4,7 @@ class App.Zipcode
   constructor: (@name, @boundaries) ->
 
   setPolygon: (color) ->
-    new google.maps.Polygon(
+    new google.maps.Polygon
       paths: @boundaries
       strokeColor: color
       strokeOpacity: 0.8
@@ -13,7 +13,6 @@ class App.Zipcode
       fillOpacity: 0
       zipcode: @name
       active: false
-    )
 
   polygon: null
 
@@ -28,20 +27,13 @@ class App.Zipcode
       @polygon.active = true
       @polygon.fillOpacity = 0.5
     @polygon.setMap googleMap
-    @addListenerToPolygon(@)
+    @addListenerToPolygon()
 
-  addListenerToPolygon: (context) ->
+  addListenerToPolygon: ->
     google.maps.event.addListener @polygon, "click", ->
       fillOpacity = if @fillOpacity is 0 then 0.5 else 0
       @setOptions
         fillOpacity: fillOpacity
       @active = !@active
-      context.getSelectedZipCodes()
-
-  getSelectedZipCodes: ->
-    map.selectedZipCodes = []
-    map.zipcodes.forEach (zipcode) ->
-      if zipcode.polygon.active
-        map.selectedZipCodes.push(zipcode.polygon.zipcode)
-    map.printSelectedZipCodes()
+      map.getSelectedZipCodes()
 

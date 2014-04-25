@@ -2,38 +2,73 @@
 
 describe 'zipcode', ->
   zipcode = null
+  map = null
 
   beforeEach ->
     fixture.load 'zipcodes'
     coordinates = [
-      { k: 1, a: 1 }, { k: 2, a: 2 }, { k: 2, a: 1 }, { k: 1, a: 2 }
+      { k: 1, a: 1 },
+      { k: 2, a: 2 },
+      { k: 2, a: 1 },
+      { k: 1, a: 2 }
     ]
+    map = new App.Map($('#zip-areas-map-canvas'))
     zipcode = new App.Zipcode('name', coordinates)
 
-  describe 'properties', ->
-    it 'expects zipcode to be defined', ->
-      expect(zipcode).toBeDefined()
-    it 'expects zipcode #name to be defined', ->
-      expect(zipcode.name).toBeDefined()
-    it 'expects zipcode #boundaries to be defined', ->
-      expect(zipcode.boundaries).toBeDefined()
-    it 'expects zipcode #setPolygon to be defined', ->
-      expect(zipcode.setPolygon).toBeDefined()
-    it 'expects zipcode #polygon to be null', ->
-      expect(zipcode.polygon).toBeNull()
-    it 'expects zipcode #changeColor to be defined', ->
-      expect(zipcode.changeColor).toBeDefined()
-    it 'expects zipcode #createPolygon to be defined', ->
-      expect(zipcode.createPolygon).toBeDefined()
+  it 'expect zipcode to be defined', ->
+    expect(zipcode).toBeDefined()
 
-  describe '#create Polygon', ->
-    it 'creates a polygon', ->
+  describe '#name', ->
+    it 'expect to be defined', ->
+      expect(zipcode.name).toBeDefined()
+
+    it 'is equal to \"name\"', ->
+      expect(zipcode.name).toEqual('name')
+
+  describe '#boundaries', ->
+
+    it 'expect to be defined', ->
+      expect(zipcode.boundaries).toBeDefined()
+
+    it 'has 4 boundaries', ->
+      expect(zipcode.boundaries.length).toEqual(4)
+
+  describe '#setPolygon', ->
+
+    it 'expect to be defined', ->
+      expect(zipcode.setPolygon).toBeDefined()
+
+  describe '#polygon', ->
+
+    it 'is null in the begining', ->
+      expect(zipcode.polygon).toBeNull()
+
+  describe '#createPolygon', ->
+
+    it 'is defined', ->
       canvas = $('#zip-area-map-canvas')
       mapOptions =
         center: new google.maps.LatLng(40.75532, -73.983677)
         zoom: 12
-      map = new google.maps.Map(canvas, mapOptions)
-      zipcode.createPolygon("#FFF", map)
+      map = new google.maps.Map(canvas.get(0), mapOptions)
+      zipcode.createPolygon(App.color(), map)
       expect(zipcode.polygon).toBeDefined()
-    it 'assigns name to the polygon', ->
+
+  describe '#changeColor', ->
+
+    it 'changes the color of the polygon', ->
+      canvas = $('#zip-area-map-canvas')
+      mapOptions =
+        center: new google.maps.LatLng(40.75532, -73.983677)
+        zoom: 12
+      map = new google.maps.Map(canvas.get(0), mapOptions)
+      zipcode.createPolygon(App.color(), map)
+      newColor = App.color()
+      zipcode.changeColor(newColor)
+      expect(zipcode.polygon.options.fillColor).toEqual(newColor)
+
+  describe '#addListenerToPolygon', ->
+
+    it 'change the opacity when the event is triggered', ->
+      zipcode
 

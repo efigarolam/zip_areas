@@ -5,7 +5,7 @@ describe 'initialize', ->
   beforeEach ->
     fixture.load 'zipcodes'
 
-  it 'initializes map', ->
+  xit 'initializes map', ->
     map = new window.App.Map()
     expect(map.initialize()).toHaveBeenCalled()
 
