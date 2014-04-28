@@ -27,8 +27,7 @@ class App.Map
         zoom: 12
     map = new google.maps.Map(@canvas, mapOptions)
     randomColor = App.color()
-    @zipcodes.forEach (zipcode) ->
-      zipcode.createPolygon(randomColor, map)
+    zipcode.createPolygon(randomColor, map) for zipcode in @zipcodes
 
   printSelectedZipCodes: ->
     $('#selected-zip-codes').text(map.selectedZipCodes.join(', '))
@@ -36,7 +35,6 @@ class App.Map
   getSelectedZipCodes: ->
     map.selectedZipCodes = []
     @zipcodes.forEach (zipcode) ->
-      if zipcode.polygon.active
-        map.selectedZipCodes.push(zipcode.polygon.zipcode)
+      map.selectedZipCodes.push(zipcode.polygon.zipcode) if zipcode.polygon.active
     @printSelectedZipCodes()
 

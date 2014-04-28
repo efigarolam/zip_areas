@@ -3,6 +3,8 @@ window.App ||= {}
 class App.Zipcode
   constructor: (@name, @boundaries) ->
 
+  polygon: null
+
   setPolygon: (color) ->
     new google.maps.Polygon
       paths: @boundaries
@@ -13,8 +15,6 @@ class App.Zipcode
       fillOpacity: 0
       zipcode: @name
       active: false
-
-  polygon: null
 
   changeColor: (color) ->
     @polygon.setOptions
