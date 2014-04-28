@@ -37,7 +37,7 @@ new features:
 
 * We need to create an API, for get the zipcodes and coordinates by AJAX.
 * The creation of the API involves the creation of new models and controllers.
-* Change the logic of the javascript and make refactor
+* Change the logic of the javascript and make refactor.
 * The application doesn't have tests, so we need to add too.
 
 ## Start to configure the app!

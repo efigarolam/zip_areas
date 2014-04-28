@@ -22,7 +22,7 @@ describe 'zipcode', ->
     it 'expect to be defined', ->
       expect(zipcode.name).toBeDefined()
 
-    it 'is equal to \"name\"', ->
+    it 'is equal to "name"', ->
       expect(zipcode.name).toEqual('name')
 
   describe '#boundaries', ->
