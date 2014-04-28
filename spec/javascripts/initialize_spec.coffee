@@ -9,11 +9,11 @@ describe 'initialize', ->
     $element = $('#change-color')
     map = new window.App.Map()
 
-  it 'gets zipcodes on the DOM', ->
+  it 'gets zipcodes from the DOM', ->
     map.selectedZipCodes = $('#zip-codes').val().split(',')
     expect(map.selectedZipCodes).toEqual([''])
 
-  describe '#change-color', ->
+  describe 'clicking element with id change-color', ->
 
     it 'is executed', ->
       spyOn($element, 'click')

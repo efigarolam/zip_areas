@@ -6,15 +6,12 @@ describe 'custom_methods', ->
   beforeEach ->
     array = ["ola", 2]
 
-  describe 'false cases', ->
+  describe 'when the array does not includes the given value', ->
 
-    it 'returns false when values does not match', ->
-      expect(array.include("non")).toBeFalsy
-
-    it 'returns false if type does not match', ->
+    it 'returns false if value does not match', ->
       expect(array.include("2")).toBeFalsy
 
-  describe 'true cases', ->
+  describe 'when the array includes the given value', ->
 
     it 'returns true when value and type match', ->
       expect(array.include(2)).toBeThuthy
