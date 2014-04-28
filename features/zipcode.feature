@@ -8,6 +8,6 @@ Feature: Viewing zipcodes in the page
 
   @javascript
   Scenario: Selected zipcodes in url
-    Given A user navigate to main page with params
-    Then Should appear the selected zipcodes
+    Given A user navigate to main page params 'zip_code 1234'
+    Then  He should see the map with the given zipcode selected
 
