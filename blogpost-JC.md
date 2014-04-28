@@ -41,23 +41,68 @@ new features:
 
 ## Start to create the API!
 
-Let's start with the API, the API manage zipcodes and coordinates, so the
+Let's start with the API, the first thing to do is update our `Gemfile` file
+with the necesary gems for testing:
+
+```ruby
+group :development, :test do
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'teaspoon'
+  gem 'phantomjs'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+```
+
+After updating our `Gemfile` its time to run `bundle update`. Now install rspec
+with `rails generate rspec:install` and configure rspec in the file `rspec/spec_helper`:
+
+
+
+The API manage zipcodes and coordinates, so the
 models are Zipcode and Coordinate. The zipcode has many coordinates and
 coordinate belongs to zipcode. So let's create the model zipcode with
 `rails generate model zipcode`, and edit the file
 `db/migrate/[timestamps]_create_zipcodes.rb`:
 
-  class CreateZipcodes < ActiveRecord::Migration
-    def change
-      create_table :zipcodes do |t|
-        t.string :name
+```ruby
+class CreateZipcodes < ActiveRecord::Migration
+  def change
+    create_table :zipcodes do |t|
+      t.string :name
 
-        t.timestamps
-      end
+      t.timestamps
     end
   end
+end
+```
 
 Now its time to create our model coordinate with
 `rails generate model coordinate` and edit the file
-`db/migrate/[timestamps]_create_coordinate.rb`
+`db/migrate/[timestamps]_create_coordinate.rb`:
+
+```ruby
+class CreateCoordinates < ActiveRecord::Migration
+  def change
+    create_table :coordinates do |t|
+      t.decimal :longitude
+      t.decimal :latitude
+      t.references :zipcode
+
+      t.timestamps
+    end
+    add_index :coordinates, :zipcode_id
+  end
+end
+
+```
 
