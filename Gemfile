@@ -15,11 +15,14 @@ group :development, :test do
   gem 'pry'
   gem 'pry-remote'
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'teaspoon'
+  gem 'phantomjs'
 end
 
 group :test do
   gem 'nyan-cat-formatter'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'factory_girl_rails'

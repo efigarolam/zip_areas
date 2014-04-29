@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+zipcodes = YAML.load_file('config/ny_zip_areas.yml')
+
+zipcodes.each do |zipcode|
+  Zipcode.create!(name: zipcode['name'])
+  zipcode['boundaries'].each do |coordinate|
+    Coordinate.create!(longitude: coordinate['longitude'].to_f,
+                       latitude: coordinate['latitude'].to_f,
+                       zipcode: Zipcode.last)
+  end
+end

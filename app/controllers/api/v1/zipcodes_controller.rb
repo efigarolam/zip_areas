@@ -2,11 +2,11 @@ module Api
   module V1
     class ZipcodesController < Api::V1::BaseController
       def index
-        render json: zipcodes, status: 200
+        render json: zipcodes.to_json(include: :coordinates), status: 200
       end
 
       def show
-        render json: zipcode, status: 200
+        render json: zipcode.to_json(include: :coordinates), status: 200
       end
 
       private

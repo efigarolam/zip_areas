@@ -7,7 +7,7 @@ describe Api::V1::ZipcodesController do
 
   describe '#index' do
     let(:http_code) { 200 }
-    let(:response_body) { Zipcode.all.to_json }
+    let(:response_body) { Zipcode.all.to_json(include: :coordinates) }
 
     before { get :index }
 
@@ -17,7 +17,7 @@ describe Api::V1::ZipcodesController do
   describe '#show' do
     context 'when the record exists' do
       let(:http_code) { 200 }
-      let(:response_body) { zipcode1.to_json }
+      let(:response_body) { zipcode1.to_json(include: :coordinates) }
 
       before { get :show, id: zipcode1.id }
 
